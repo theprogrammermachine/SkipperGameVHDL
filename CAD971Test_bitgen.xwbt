@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=D:\My Documents\Projects\VHDL\SkipperGameVHDL\CAD971Test.ncd
+OUTFILE=D:\My Documents\Projects\VHDL\SkipperGameVHDL\CAD971Test.bit
+FAMILY=Spartan6
+PART=xc6slx9-2tqg144
+WORKINGDIR=D:\My Documents\Projects\VHDL\SkipperGameVHDL
+LICENSE=WebPack
+USER_INFO=__0_0_0

@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=D:\My Documents\Desktop\CAD971VGA\impact.xsl
+OUTFILE=D:\My Documents\Desktop\CAD971VGA\impact.xsl
+FAMILY=Single
+PART=Single
+WORKINGDIR=D:\My Documents\Desktop\CAD971VGA
+LICENSE=iMPACT
+USER_INFO=iMPACT

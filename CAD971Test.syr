@@ -1,0 +1,932 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.18 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.19 secs
+ 
+--> Reading design: CAD971Test.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "CAD971Test.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "CAD971Test"
+Output Format                      : NGC
+Target Device                      : xc6slx9-2-tqg144
+
+---- Source Options
+Top Module Name                    : CAD971Test
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "D:\My Documents\Projects\VHDL\SkipperGameVHDL\VGA_Square.vhd" into library work
+Parsing entity <VGA_Square>.
+Parsing architecture <Behavioral> of entity <vga_square>.
+Parsing VHDL file "D:\My Documents\Projects\VHDL\SkipperGameVHDL\VGA_controller.vhd" into library work
+Parsing entity <VGA_controller>.
+Parsing architecture <Behavioral> of entity <vga_controller>.
+Parsing VHDL file "D:\My Documents\Projects\VHDL\SkipperGameVHDL\CAD971Test.vhd" into library work
+Parsing entity <CAD971Test>.
+Parsing architecture <CAD971Test> of entity <cad971test>.
+WARNING:HDLCompiler:946 - "D:\My Documents\Projects\VHDL\SkipperGameVHDL\CAD971Test.vhd" Line 106: Actual for formal port reset is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "D:\My Documents\Projects\VHDL\SkipperGameVHDL\CAD971Test.vhd" Line 116: Actual for formal port reset is neither a static name nor a globally static expression
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <CAD971Test> (architecture <CAD971Test>) from library <work>.
+
+Elaborating entity <VGA_controller> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <VGA_Square> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:92 - "D:\My Documents\Projects\VHDL\SkipperGameVHDL\VGA_Square.vhd" Line 369: scanlinex should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "D:\My Documents\Projects\VHDL\SkipperGameVHDL\VGA_Square.vhd" Line 370: scanlinex should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "D:\My Documents\Projects\VHDL\SkipperGameVHDL\VGA_Square.vhd" Line 376: scanlinex should be on the sensitivity list of the process
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <CAD971Test>.
+    Related source file is "D:\My Documents\Projects\VHDL\SkipperGameVHDL\CAD971Test.vhd".
+    Found 4-bit register for signal <sel>.
+    Found 13-bit register for signal <count>.
+    Found 13-bit adder for signal <count[12]_GND_5_o_add_0_OUT> created at line 135.
+    Found 16x8-bit Read Only RAM for signal <PWR_5_o_PWR_5_o_mux_25_OUT>
+    Found 16x8-bit Read Only RAM for signal <PWR_5_o_PWR_5_o_mux_45_OUT>
+    Found 16x8-bit Read Only RAM for signal <PWR_5_o_PWR_5_o_mux_65_OUT>
+    Found 16x8-bit Read Only RAM for signal <PWR_5_o_PWR_5_o_mux_85_OUT>
+    Found 13-bit comparator greater for signal <n0002> created at line 136
+    Summary:
+	inferred   4 RAM(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred  17 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   7 Multiplexer(s).
+Unit <CAD971Test> synthesized.
+
+Synthesizing Unit <VGA_controller>.
+    Related source file is "D:\My Documents\Projects\VHDL\SkipperGameVHDL\VGA_controller.vhd".
+    Found 11-bit register for signal <CurrentVPos>.
+    Found 11-bit register for signal <CurrentHPos>.
+    Found 11-bit adder for signal <CurrentHPos[10]_GND_6_o_add_1_OUT> created at line 48.
+    Found 11-bit adder for signal <CurrentVPos[10]_GND_6_o_add_3_OUT> created at line 51.
+    Found 11-bit subtractor for signal <GND_6_o_GND_6_o_sub_20_OUT<10:0>> created at line 79.
+    Found 11-bit subtractor for signal <GND_6_o_GND_6_o_sub_17_OUT<10:0>> created at line 76.
+    Found 11-bit comparator greater for signal <CurrentHPos[10]_GND_6_o_LessThan_1_o> created at line 47
+    Found 11-bit comparator greater for signal <CurrentVPos[10]_GND_6_o_LessThan_3_o> created at line 50
+    Found 11-bit comparator lessequal for signal <CurrentHPos[10]_GND_6_o_LessThan_10_o> created at line 61
+    Found 11-bit comparator lessequal for signal <CurrentVPos[10]_GND_6_o_LessThan_11_o> created at line 64
+    Found 11-bit comparator lessequal for signal <n0012> created at line 67
+    Found 11-bit comparator greater for signal <CurrentHPos[10]_GND_6_o_LessThan_13_o> created at line 67
+    Found 11-bit comparator lessequal for signal <n0017> created at line 70
+    Found 11-bit comparator greater for signal <CurrentVPos[10]_GND_6_o_LessThan_15_o> created at line 70
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred  22 D-type flip-flop(s).
+	inferred   8 Comparator(s).
+	inferred   7 Multiplexer(s).
+Unit <VGA_controller> synthesized.
+
+Synthesizing Unit <VGA_Square>.
+    Related source file is "D:\My Documents\Projects\VHDL\SkipperGameVHDL\VGA_Square.vhd".
+WARNING:Xst:647 - Input <key<3:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <sw<7:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 1-bit register for signal <squareSpeedSign>.
+    Found 44-bit register for signal <doorXArrTempG>.
+    Found 44-bit register for signal <doorYArrTempG>.
+    Found 11-bit register for signal <speed>.
+    Found 30-bit register for signal <prescaler>.
+    Found 30-bit register for signal <prescalerv2>.
+    Found 30-bit register for signal <prescalerv4>.
+    Found 30-bit register for signal <prescalerv3>.
+    Found 30-bit register for signal <prescalerv6>.
+    Found 4-bit register for signal <firstDigit>.
+    Found 4-bit register for signal <secondDigit>.
+    Found 4-bit register for signal <score>.
+    Found 4-bit register for signal <score2>.
+    Found 11-bit register for signal <squareSpeed>.
+    Found 2-bit register for signal <state>.
+    Found 11-bit register for signal <squareY>.
+    Found 4-bit register for signal <passedFlags>.
+    Found 44-bit register for signal <doorXArr>.
+    Found 44-bit register for signal <doorYArr>.
+    Found 32-bit register for signal <psuedo_rand>.
+    Found 30-bit adder for signal <prescaler[29]_GND_8_o_add_13_OUT> created at line 117.
+    Found 11-bit adder for signal <squareY[10]_squareSpeed[10]_add_16_OUT> created at line 123.
+    Found 11-bit adder for signal <speed[10]_GND_8_o_add_24_OUT> created at line 132.
+    Found 30-bit adder for signal <prescalerv2[29]_GND_8_o_add_25_OUT> created at line 135.
+    Found 4-bit adder for signal <secondDigit[3]_GND_8_o_add_30_OUT> created at line 141.
+    Found 4-bit adder for signal <firstDigit[3]_GND_8_o_add_31_OUT> created at line 143.
+    Found 30-bit adder for signal <prescalerv4[29]_GND_8_o_add_34_OUT> created at line 147.
+    Found 4-bit adder for signal <score2[3]_GND_8_o_add_42_OUT> created at line 158.
+    Found 4-bit adder for signal <score[3]_GND_8_o_add_46_OUT> created at line 163.
+    Found 30-bit adder for signal <prescalerv6[29]_GND_8_o_add_299_OUT> created at line 287.
+    Found 11-bit adder for signal <doorYArr[10]_GND_8_o_add_339_OUT> created at line 302.
+    Found 11-bit adder for signal <doorYArr[21]_GND_8_o_add_350_OUT> created at line 302.
+    Found 11-bit adder for signal <doorYArr[32]_GND_8_o_add_361_OUT> created at line 302.
+    Found 11-bit adder for signal <doorYArr[43]_GND_8_o_add_372_OUT> created at line 302.
+    Found 11-bit adder for signal <squareSpeed[10]_GND_8_o_add_450_OUT> created at line 330.
+    Found 30-bit adder for signal <prescalerv3[29]_GND_8_o_add_454_OUT> created at line 335.
+    Found 11-bit adder for signal <doorXArr[10]_GND_8_o_add_476_OUT> created at line 369.
+    Found 11-bit adder for signal <doorYArr[10]_GND_8_o_add_479_OUT> created at line 369.
+    Found 11-bit adder for signal <doorXArr[21]_GND_8_o_add_484_OUT> created at line 369.
+    Found 11-bit adder for signal <doorYArr[21]_GND_8_o_add_487_OUT> created at line 369.
+    Found 11-bit adder for signal <doorXArr[32]_GND_8_o_add_492_OUT> created at line 369.
+    Found 11-bit adder for signal <doorYArr[32]_GND_8_o_add_495_OUT> created at line 369.
+    Found 11-bit adder for signal <doorXArr[43]_GND_8_o_add_500_OUT> created at line 369.
+    Found 11-bit adder for signal <doorYArr[43]_GND_8_o_add_503_OUT> created at line 369.
+    Found 11-bit adder for signal <squareY[10]_GND_8_o_add_511_OUT> created at line 376.
+    Found 11-bit subtractor for signal <GND_8_o_GND_8_o_sub_20_OUT<10:0>> created at line 127.
+    Found 11-bit subtractor for signal <GND_8_o_GND_8_o_sub_54_OUT<10:0>> created at line 170.
+    Found 11-bit subtractor for signal <GND_8_o_GND_8_o_sub_74_OUT<10:0>> created at line 193.
+    Found 11-bit subtractor for signal <GND_8_o_GND_8_o_sub_94_OUT<10:0>> created at line 216.
+    Found 11-bit subtractor for signal <GND_8_o_GND_8_o_sub_114_OUT<10:0>> created at line 239.
+    Found 7-bit subtractor for signal <GND_8_o_GND_8_o_sub_315_OUT<6:0>> created at line 302.
+    Found 11-bit subtractor for signal <GND_8_o_GND_8_o_sub_449_OUT<10:0>> created at line 328.
+    Found 3x4-bit multiplier for signal <GND_8_o_PWR_9_o_MuLt_313_OUT> created at line 302.
+    Found 30-bit comparator greater for signal <n0008> created at line 119
+    Found 11-bit comparator greater for signal <n0010> created at line 122
+    Found 11-bit comparator greater for signal <n0014> created at line 126
+    Found 30-bit comparator greater for signal <n0020> created at line 131
+    Found 30-bit comparator greater for signal <n0026> created at line 138
+    Found 4-bit comparator greater for signal <n0028> created at line 139
+    Found 11-bit comparator greater for signal <n0038> created at line 150
+    Found 11-bit comparator greater for signal <doorXArr[43]_squareX[10]_LessThan_40_o> created at line 154
+    Found 4-bit comparator greater for signal <n0042> created at line 156
+    Found 11-bit comparator greater for signal <n0084> created at line 173
+    Found 11-bit comparator greater for signal <doorXArr[32]_squareX[10]_LessThan_60_o> created at line 177
+    Found 11-bit comparator greater for signal <n0125> created at line 196
+    Found 11-bit comparator greater for signal <doorXArr[21]_squareX[10]_LessThan_80_o> created at line 200
+    Found 11-bit comparator greater for signal <n0166> created at line 219
+    Found 11-bit comparator greater for signal <doorXArr[10]_squareX[10]_LessThan_100_o> created at line 223
+    Found 11-bit comparator lessequal for signal <n0259> created at line 267
+    Found 11-bit comparator lessequal for signal <n0261> created at line 267
+    Found 11-bit comparator lessequal for signal <n0264> created at line 268
+    Found 11-bit comparator lessequal for signal <n0266> created at line 268
+    Found 11-bit comparator lessequal for signal <n0274> created at line 270
+    Found 11-bit comparator lessequal for signal <n0278> created at line 272
+    Found 11-bit comparator lessequal for signal <n0280> created at line 272
+    Found 11-bit comparator lessequal for signal <n0283> created at line 273
+    Found 11-bit comparator lessequal for signal <n0285> created at line 273
+    Found 11-bit comparator lessequal for signal <n0289> created at line 274
+    Found 11-bit comparator lessequal for signal <n0292> created at line 275
+    Found 11-bit comparator greater for signal <doorXArr[10]_GND_8_o_LessThan_192_o> created at line 276
+    Found 4-bit comparator greater for signal <GND_8_o_score2[3]_LessThan_194_o> created at line 280
+    Found 11-bit comparator lessequal for signal <n0304> created at line 267
+    Found 11-bit comparator greater for signal <n0306> created at line 267
+    Found 11-bit comparator lessequal for signal <n0309> created at line 268
+    Found 11-bit comparator lessequal for signal <n0311> created at line 268
+    Found 11-bit comparator lessequal for signal <n0319> created at line 270
+    Found 11-bit comparator lessequal for signal <n0323> created at line 272
+    Found 11-bit comparator lessequal for signal <n0325> created at line 272
+    Found 11-bit comparator lessequal for signal <n0328> created at line 273
+    Found 11-bit comparator lessequal for signal <n0330> created at line 273
+    Found 11-bit comparator lessequal for signal <n0334> created at line 274
+    Found 11-bit comparator lessequal for signal <n0337> created at line 275
+    Found 11-bit comparator greater for signal <doorXArr[21]_GND_8_o_LessThan_226_o> created at line 276
+    Found 11-bit comparator lessequal for signal <n0350> created at line 267
+    Found 11-bit comparator greater for signal <n0352> created at line 267
+    Found 11-bit comparator lessequal for signal <n0355> created at line 268
+    Found 11-bit comparator lessequal for signal <n0357> created at line 268
+    Found 11-bit comparator lessequal for signal <n0365> created at line 270
+    Found 11-bit comparator lessequal for signal <n0369> created at line 272
+    Found 11-bit comparator lessequal for signal <n0371> created at line 272
+    Found 11-bit comparator lessequal for signal <n0374> created at line 273
+    Found 11-bit comparator lessequal for signal <n0376> created at line 273
+    Found 11-bit comparator lessequal for signal <n0380> created at line 274
+    Found 11-bit comparator lessequal for signal <n0383> created at line 275
+    Found 11-bit comparator greater for signal <doorXArr[32]_GND_8_o_LessThan_260_o> created at line 276
+    Found 11-bit comparator lessequal for signal <n0396> created at line 267
+    Found 11-bit comparator greater for signal <n0398> created at line 267
+    Found 11-bit comparator lessequal for signal <n0401> created at line 268
+    Found 11-bit comparator lessequal for signal <n0403> created at line 268
+    Found 11-bit comparator lessequal for signal <n0411> created at line 270
+    Found 11-bit comparator lessequal for signal <n0415> created at line 272
+    Found 11-bit comparator lessequal for signal <n0417> created at line 272
+    Found 11-bit comparator lessequal for signal <n0420> created at line 273
+    Found 11-bit comparator lessequal for signal <n0422> created at line 273
+    Found 11-bit comparator lessequal for signal <n0426> created at line 274
+    Found 11-bit comparator lessequal for signal <n0429> created at line 275
+    Found 11-bit comparator greater for signal <doorXArr[43]_GND_8_o_LessThan_294_o> created at line 276
+    Found 30-bit comparator greater for signal <prescalerv6[29]_GND_8_o_LessThan_299_o> created at line 286
+    Found 11-bit comparator greater for signal <doorXArr[21]_doorXArr[10]_LessThan_303_o> created at line 296
+    Found 11-bit comparator greater for signal <doorXArr[32]_doorXArr[10]_LessThan_307_o> created at line 296
+    Found 11-bit comparator greater for signal <doorXArr[43]_doorXArr[10]_LessThan_311_o> created at line 296
+    Found 11-bit comparator lessequal for signal <n0464> created at line 302
+    Found 11-bit comparator lessequal for signal <n0475> created at line 302
+    Found 11-bit comparator lessequal for signal <n0482> created at line 302
+    Found 11-bit comparator lessequal for signal <n0489> created at line 302
+    Found 30-bit comparator greater for signal <n0557> created at line 322
+    Found 11-bit comparator greater for signal <squareSpeed[10]_GND_8_o_LessThan_445_o> created at line 324
+    Found 11-bit comparator greater for signal <GND_8_o_squareSpeed[10]_LessThan_448_o> created at line 327
+    Found 11-bit comparator lessequal for signal <n0597> created at line 369
+    Found 11-bit comparator lessequal for signal <n0600> created at line 369
+    Found 11-bit comparator lessequal for signal <n0602> created at line 369
+    Found 11-bit comparator lessequal for signal <n0605> created at line 369
+    Found 11-bit comparator greater for signal <GND_8_o_ScanlineX[10]_LessThan_482_o> created at line 370
+    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_8_o_LessThan_483_o> created at line 370
+    Found 11-bit comparator lessequal for signal <n0614> created at line 369
+    Found 11-bit comparator lessequal for signal <n0617> created at line 369
+    Found 11-bit comparator lessequal for signal <n0619> created at line 369
+    Found 11-bit comparator lessequal for signal <n0622> created at line 369
+    Found 11-bit comparator lessequal for signal <n0629> created at line 369
+    Found 11-bit comparator lessequal for signal <n0632> created at line 369
+    Found 11-bit comparator lessequal for signal <n0634> created at line 369
+    Found 11-bit comparator lessequal for signal <n0637> created at line 369
+    Found 11-bit comparator lessequal for signal <n0644> created at line 369
+    Found 11-bit comparator lessequal for signal <n0647> created at line 369
+    Found 11-bit comparator lessequal for signal <n0649> created at line 369
+    Found 11-bit comparator lessequal for signal <n0652> created at line 369
+    Found 11-bit comparator lessequal for signal <n0660> created at line 376
+    Found 11-bit comparator lessequal for signal <n0662> created at line 376
+    Found 11-bit comparator lessequal for signal <n0665> created at line 376
+    Found 11-bit comparator lessequal for signal <n0668> created at line 376
+    Summary:
+	inferred   1 Multiplier(s).
+	inferred  31 Adder/Subtractor(s).
+	inferred 414 D-type flip-flop(s).
+	inferred  97 Comparator(s).
+	inferred 187 Multiplexer(s).
+Unit <VGA_Square> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 4
+ 16x8-bit single-port Read Only RAM                    : 4
+# Multipliers                                          : 1
+ 4x3-bit multiplier                                    : 1
+# Adders/Subtractors                                   : 36
+ 11-bit adder                                          : 17
+ 11-bit addsub                                         : 1
+ 11-bit subtractor                                     : 7
+ 13-bit adder                                          : 1
+ 30-bit adder                                          : 5
+ 4-bit adder                                           : 4
+ 7-bit subtractor                                      : 1
+# Registers                                            : 24
+ 1-bit register                                        : 1
+ 11-bit register                                       : 5
+ 13-bit register                                       : 1
+ 2-bit register                                        : 1
+ 30-bit register                                       : 5
+ 32-bit register                                       : 1
+ 4-bit register                                        : 6
+ 44-bit register                                       : 4
+# Comparators                                          : 106
+ 11-bit comparator greater                             : 28
+ 11-bit comparator lessequal                           : 69
+ 13-bit comparator greater                             : 1
+ 30-bit comparator greater                             : 5
+ 4-bit comparator greater                              : 3
+# Multiplexers                                         : 201
+ 1-bit 2-to-1 multiplexer                              : 130
+ 11-bit 2-to-1 multiplexer                             : 19
+ 2-bit 2-to-1 multiplexer                              : 25
+ 3-bit 2-to-1 multiplexer                              : 1
+ 30-bit 2-to-1 multiplexer                             : 12
+ 4-bit 2-to-1 multiplexer                              : 6
+ 6-bit 2-to-1 multiplexer                              : 1
+ 8-bit 2-to-1 multiplexer                              : 7
+# Xors                                                 : 3
+ 1-bit xor2                                            : 3
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <CAD971Test>.
+The following registers are absorbed into counter <count>: 1 register on signal <count>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_PWR_5_o_PWR_5_o_mux_85_OUT> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 8-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <a>             |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_PWR_5_o_PWR_5_o_mux_65_OUT> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 8-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <b>             |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_PWR_5_o_PWR_5_o_mux_45_OUT> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 8-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <c>             |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_PWR_5_o_PWR_5_o_mux_25_OUT> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 8-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d>             |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <CAD971Test> synthesized (advanced).
+
+Synthesizing (advanced) Unit <VGA_Square>.
+The following registers are absorbed into accumulator <squareY>: 1 register on signal <squareY>.
+The following registers are absorbed into counter <prescaler>: 1 register on signal <prescaler>.
+The following registers are absorbed into counter <prescalerv2>: 1 register on signal <prescalerv2>.
+The following registers are absorbed into counter <prescalerv4>: 1 register on signal <prescalerv4>.
+The following registers are absorbed into counter <prescalerv3>: 1 register on signal <prescalerv3>.
+The following registers are absorbed into counter <firstDigit>: 1 register on signal <firstDigit>.
+The following registers are absorbed into counter <secondDigit>: 1 register on signal <secondDigit>.
+The following registers are absorbed into counter <score>: 1 register on signal <score>.
+The following registers are absorbed into counter <score2>: 1 register on signal <score2>.
+	Multiplier <Mmult_GND_8_o_PWR_9_o_MuLt_313_OUT> in block <VGA_Square> and adder/subtractor <Msub_GND_8_o_GND_8_o_sub_315_OUT<6:0>> in block <VGA_Square> are combined into a MAC<Maddsub_GND_8_o_PWR_9_o_MuLt_313_OUT>.
+Unit <VGA_Square> synthesized (advanced).
+
+Synthesizing (advanced) Unit <VGA_controller>.
+The following registers are absorbed into counter <CurrentHPos>: 1 register on signal <CurrentHPos>.
+The following registers are absorbed into counter <CurrentVPos>: 1 register on signal <CurrentVPos>.
+Unit <VGA_controller> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 4
+ 16x8-bit single-port distributed Read Only RAM        : 4
+# MACs                                                 : 1
+ 4x3-to-7-bit MAC                                      : 1
+# Adders/Subtractors                                   : 24
+ 11-bit adder                                          : 15
+ 11-bit subtractor                                     : 7
+ 13-bit adder                                          : 1
+ 30-bit adder                                          : 1
+# Counters                                             : 11
+ 11-bit up counter                                     : 2
+ 13-bit up counter                                     : 1
+ 30-bit up counter                                     : 4
+ 4-bit up counter                                      : 4
+# Accumulators                                         : 1
+ 11-bit updown accumulator                             : 1
+# Registers                                            : 271
+ Flip-Flops                                            : 271
+# Comparators                                          : 106
+ 11-bit comparator greater                             : 28
+ 11-bit comparator lessequal                           : 69
+ 13-bit comparator greater                             : 1
+ 30-bit comparator greater                             : 5
+ 4-bit comparator greater                              : 3
+# Multiplexers                                         : 193
+ 1-bit 2-to-1 multiplexer                              : 130
+ 11-bit 2-to-1 multiplexer                             : 17
+ 2-bit 2-to-1 multiplexer                              : 25
+ 3-bit 2-to-1 multiplexer                              : 1
+ 30-bit 2-to-1 multiplexer                             : 8
+ 4-bit 2-to-1 multiplexer                              : 4
+ 6-bit 2-to-1 multiplexer                              : 1
+ 8-bit 2-to-1 multiplexer                              : 7
+# Xors                                                 : 3
+ 1-bit xor2                                            : 3
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1293 - FF/Latch <doorYArrTempG_43> has a constant value of 0 in block <VGA_Square>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <doorYArrTempG_42> has a constant value of 0 in block <VGA_Square>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <doorYArrTempG_41> has a constant value of 0 in block <VGA_Square>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <doorYArrTempG_32> has a constant value of 0 in block <VGA_Square>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <doorYArrTempG_31> has a constant value of 0 in block <VGA_Square>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <doorYArrTempG_30> has a constant value of 0 in block <VGA_Square>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <doorYArrTempG_21> has a constant value of 0 in block <VGA_Square>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <doorYArrTempG_20> has a constant value of 0 in block <VGA_Square>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <doorYArrTempG_19> has a constant value of 0 in block <VGA_Square>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <doorYArrTempG_10> has a constant value of 0 in block <VGA_Square>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <doorYArrTempG_9> has a constant value of 0 in block <VGA_Square>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <doorYArrTempG_8> has a constant value of 0 in block <VGA_Square>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <doorYArr_43> has a constant value of 0 in block <VGA_Square>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <doorYArr_42> has a constant value of 0 in block <VGA_Square>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <doorYArr_41> has a constant value of 0 in block <VGA_Square>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <doorYArr_32> has a constant value of 0 in block <VGA_Square>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <doorYArr_31> has a constant value of 0 in block <VGA_Square>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <doorYArr_30> has a constant value of 0 in block <VGA_Square>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <doorYArr_21> has a constant value of 0 in block <VGA_Square>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <doorYArr_20> has a constant value of 0 in block <VGA_Square>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <doorYArr_19> has a constant value of 0 in block <VGA_Square>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <doorYArr_10> has a constant value of 0 in block <VGA_Square>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <doorYArr_9> has a constant value of 0 in block <VGA_Square>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <doorYArr_8> has a constant value of 0 in block <VGA_Square>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:3002 - This design contains one or more registers/latches that are directly
+   incompatible with the Spartan6 architecture. The two primary causes of this is
+   either a register or latch described with both an asynchronous set and
+   asynchronous reset, or a register or latch described with an asynchronous
+   set or reset which however has an initialization value of the opposite 
+   polarity (i.e. asynchronous reset with an initialization value of 1).
+    While this circuit can be built, it creates a sub-optimal implementation
+   in terms of area, power and performance. For a more optimal implementation
+   Xilinx highly recommends one of the following:
+
+          1) Remove either the set or reset from all registers and latches
+             if not needed for required functionality
+          2) Modify the code in order to produce a synchronous set
+             and/or reset (both is preferred)
+          3) Ensure all registers have the same initialization value as the
+             described asynchronous set or reset polarity
+          4) Use the -async_to_sync option to transform the asynchronous
+             set/reset to synchronous operation
+             (timing simulation highly recommended when using this option)
+
+  Please refer to http://www.xilinx.com search string "Spartan6 asynchronous set/reset" for more details.
+
+  List of register instances with asynchronous set or reset and opposite initialization value:
+    doorXArrTempG_42 in unit <VGA_Square>
+    doorXArrTempG_39 in unit <VGA_Square>
+    doorXArrTempG_37 in unit <VGA_Square>
+    doorXArrTempG_36 in unit <VGA_Square>
+    doorXArrTempG_31 in unit <VGA_Square>
+    doorXArrTempG_30 in unit <VGA_Square>
+    doorXArrTempG_29 in unit <VGA_Square>
+    doorXArrTempG_24 in unit <VGA_Square>
+    doorXArrTempG_21 in unit <VGA_Square>
+    doorXArrTempG_18 in unit <VGA_Square>
+    doorXArrTempG_16 in unit <VGA_Square>
+    doorXArrTempG_15 in unit <VGA_Square>
+    doorXArrTempG_10 in unit <VGA_Square>
+    doorXArrTempG_8 in unit <VGA_Square>
+    doorXArrTempG_7 in unit <VGA_Square>
+    doorXArrTempG_6 in unit <VGA_Square>
+    doorXArrTempG_4 in unit <VGA_Square>
+    doorXArrTempG_3 in unit <VGA_Square>
+    doorXArrTempG_2 in unit <VGA_Square>
+    doorYArrTempG_40 in unit <VGA_Square>
+    doorYArrTempG_39 in unit <VGA_Square>
+    doorYArrTempG_36 in unit <VGA_Square>
+    doorYArrTempG_29 in unit <VGA_Square>
+    doorYArrTempG_28 in unit <VGA_Square>
+    doorYArrTempG_25 in unit <VGA_Square>
+    doorYArrTempG_18 in unit <VGA_Square>
+    doorYArrTempG_17 in unit <VGA_Square>
+    doorYArrTempG_14 in unit <VGA_Square>
+    doorYArrTempG_7 in unit <VGA_Square>
+    doorYArrTempG_6 in unit <VGA_Square>
+    doorYArrTempG_3 in unit <VGA_Square>
+
+
+Optimizing unit <CAD971Test> ...
+
+Optimizing unit <VGA_Square> ...
+
+Optimizing unit <VGA_controller> ...
+WARNING:Xst:1293 - FF/Latch <VGA_SQ/prescalerv4_9> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv4_10> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv4_11> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv4_12> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv4_13> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv4_14> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv4_15> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv4_16> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv4_17> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv4_18> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv4_19> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv4_20> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv4_21> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv4_22> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv4_23> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv4_24> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv4_25> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv4_26> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv4_27> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv4_28> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv4_29> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_Control/CurrentHPos_10> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_Control/CurrentVPos_10> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/squareSpeed_2> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/squareSpeed_3> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/squareSpeed_4> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/squareSpeed_5> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/squareSpeed_6> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/squareSpeed_7> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/squareSpeed_8> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/squareSpeed_9> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/squareSpeed_10> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv6_23> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv6_24> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv6_25> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv6_26> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv6_27> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv6_28> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv6_29> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/squareY_10> (without init value) has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/squareY_9> (without init value) has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv4_8> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv2_20> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv2_21> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv2_22> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv2_23> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv2_24> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv2_25> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv2_26> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv2_27> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv2_28> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv2_29> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv3_22> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv3_23> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv3_24> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv3_25> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv3_26> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv3_27> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv3_28> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv3_29> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/score2_1> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/score2_2> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/score2_3> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescaler_18> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescaler_19> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescaler_20> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescaler_21> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescaler_22> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescaler_23> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescaler_24> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescaler_25> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescaler_26> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescaler_27> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescaler_28> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescaler_29> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv2_11> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv2_12> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv2_13> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv2_14> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv2_15> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv2_16> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv2_17> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv2_18> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/prescalerv2_19> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block CAD971Test, actual ratio is 27.
+WARNING:Xst:1426 - The value init of the FF/Latch VGA_SQ/doorXArrTempG_42_LD hinder the constant cleaning in the block CAD971Test.
+   You should achieve better results by setting this init to 1.
+FlipFlop VGA_SQ/doorXArr_18 has been replicated 1 time(s)
+FlipFlop VGA_SQ/squareY_0 has been replicated 1 time(s)
+FlipFlop VGA_SQ/squareY_1 has been replicated 1 time(s)
+FlipFlop VGA_SQ/squareY_3 has been replicated 1 time(s)
+FlipFlop VGA_SQ/squareY_4 has been replicated 1 time(s)
+FlipFlop VGA_SQ/squareY_5 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 382
+ Flip-Flops                                            : 382
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : CAD971Test.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 1941
+#      GND                         : 1
+#      INV                         : 29
+#      LUT1                        : 49
+#      LUT2                        : 176
+#      LUT3                        : 177
+#      LUT4                        : 503
+#      LUT5                        : 95
+#      LUT6                        : 245
+#      MUXCY                       : 482
+#      MUXF7                       : 2
+#      VCC                         : 1
+#      XORCY                       : 181
+# FlipFlops/Latches                : 383
+#      FD                          : 90
+#      FDC                         : 11
+#      FDCE                        : 171
+#      FDE                         : 39
+#      FDP                         : 1
+#      FDPE                        : 38
+#      FDR                         : 32
+#      LD                          : 1
+# Clock Buffers                    : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 23
+#      IBUF                        : 3
+#      OBUF                        : 20
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx9tqg144-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             383  out of  11440     3%  
+ Number of Slice LUTs:                 1274  out of   5720    22%  
+    Number used as Logic:              1274  out of   5720    22%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   1350
+   Number with an unused Flip Flop:     967  out of   1350    71%  
+   Number with an unused LUT:            76  out of   1350     5%  
+   Number of fully used LUT-FF pairs:   307  out of   1350    22%  
+   Number of unique control sets:        20
+
+IO Utilization: 
+ Number of IOs:                          34
+ Number of bonded IOBs:                  24  out of    102    23%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+CLOCK_24                           | BUFGP                  | 382   |
+RESET_N                            | IBUF+BUFG              | 1     |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 13.973ns (Maximum Frequency: 71.567MHz)
+   Minimum input arrival time before clock: 6.610ns
+   Maximum output required time after clock: 17.707ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'CLOCK_24'
+  Clock period: 13.973ns (frequency: 71.567MHz)
+  Total number of paths / destination ports: 10800384 / 643
+-------------------------------------------------------------------------
+Delay:               13.973ns (Levels of Logic = 22)
+  Source:            VGA_SQ/doorXArr_15 (FF)
+  Destination:       VGA_SQ/state_1 (FF)
+  Source Clock:      CLOCK_24 rising
+  Destination Clock: CLOCK_24 rising
+
+  Data Path: VGA_SQ/doorXArr_15 to VGA_SQ/state_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              18   0.525   1.665  VGA_SQ/doorXArr_15 (VGA_SQ/doorXArr_15)
+     LUT5:I0->O            2   0.254   0.726  VGA_SQ/squareX[10]_doorXArr[21]_AND_36_o2 (VGA_SQ/squareX[10]_doorXArr[21]_AND_36_o2)
+     LUT3:I2->O            8   0.254   0.944  VGA_SQ/squareX[10]_doorXArr[21]_AND_36_o3_SW0 (N54)
+     LUT6:I5->O            2   0.254   1.002  VGA_SQ/Mmux_doorXArr[10]_doorXArr[21]_mux_303_OUT12 (VGA_SQ/doorXArr[10]_doorXArr[21]_mux_303_OUT<0>)
+     LUT4:I0->O            1   0.254   0.000  VGA_SQ/Mcompar_doorXArr[32]_doorXArr[10]_LessThan_307_o_lut<0> (VGA_SQ/Mcompar_doorXArr[32]_doorXArr[10]_LessThan_307_o_lut<0>)
+     MUXCY:S->O            1   0.215   0.000  VGA_SQ/Mcompar_doorXArr[32]_doorXArr[10]_LessThan_307_o_cy<0> (VGA_SQ/Mcompar_doorXArr[32]_doorXArr[10]_LessThan_307_o_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  VGA_SQ/Mcompar_doorXArr[32]_doorXArr[10]_LessThan_307_o_cy<1> (VGA_SQ/Mcompar_doorXArr[32]_doorXArr[10]_LessThan_307_o_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  VGA_SQ/Mcompar_doorXArr[32]_doorXArr[10]_LessThan_307_o_cy<2> (VGA_SQ/Mcompar_doorXArr[32]_doorXArr[10]_LessThan_307_o_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  VGA_SQ/Mcompar_doorXArr[32]_doorXArr[10]_LessThan_307_o_cy<3> (VGA_SQ/Mcompar_doorXArr[32]_doorXArr[10]_LessThan_307_o_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  VGA_SQ/Mcompar_doorXArr[32]_doorXArr[10]_LessThan_307_o_cy<4> (VGA_SQ/Mcompar_doorXArr[32]_doorXArr[10]_LessThan_307_o_cy<4>)
+     MUXCY:CI->O          13   0.023   1.098  VGA_SQ/Mcompar_doorXArr[32]_doorXArr[10]_LessThan_307_o_cy<5> (VGA_SQ/Mcompar_doorXArr[32]_doorXArr[10]_LessThan_307_o_cy<5>)
+     LUT6:I5->O            2   0.254   1.002  VGA_SQ/Mmux_doorXArr[10]_doorXArr[32]_mux_307_OUT12 (VGA_SQ/doorXArr[10]_doorXArr[32]_mux_307_OUT<0>)
+     LUT4:I0->O            1   0.254   0.000  VGA_SQ/Mcompar_doorXArr[43]_doorXArr[10]_LessThan_311_o_lut<0> (VGA_SQ/Mcompar_doorXArr[43]_doorXArr[10]_LessThan_311_o_lut<0>)
+     MUXCY:S->O            1   0.215   0.000  VGA_SQ/Mcompar_doorXArr[43]_doorXArr[10]_LessThan_311_o_cy<0> (VGA_SQ/Mcompar_doorXArr[43]_doorXArr[10]_LessThan_311_o_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  VGA_SQ/Mcompar_doorXArr[43]_doorXArr[10]_LessThan_311_o_cy<1> (VGA_SQ/Mcompar_doorXArr[43]_doorXArr[10]_LessThan_311_o_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  VGA_SQ/Mcompar_doorXArr[43]_doorXArr[10]_LessThan_311_o_cy<2> (VGA_SQ/Mcompar_doorXArr[43]_doorXArr[10]_LessThan_311_o_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  VGA_SQ/Mcompar_doorXArr[43]_doorXArr[10]_LessThan_311_o_cy<3> (VGA_SQ/Mcompar_doorXArr[43]_doorXArr[10]_LessThan_311_o_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  VGA_SQ/Mcompar_doorXArr[43]_doorXArr[10]_LessThan_311_o_cy<4> (VGA_SQ/Mcompar_doorXArr[43]_doorXArr[10]_LessThan_311_o_cy<4>)
+     MUXCY:CI->O          27   0.023   1.436  VGA_SQ/Mcompar_doorXArr[43]_doorXArr[10]_LessThan_311_o_cy<5> (VGA_SQ/Mcompar_doorXArr[43]_doorXArr[10]_LessThan_311_o_cy<5>)
+     LUT5:I4->O            1   0.254   0.790  VGA_SQ/Mmux_squareSpeedSign_squareSpeedSign_MUX_355_o114_SW6_SW0 (N159)
+     LUT6:I4->O            1   0.250   0.790  VGA_SQ/Mmux_squareSpeedSign_squareSpeedSign_MUX_355_o114_SW6 (N115)
+     LUT6:I4->O            2   0.250   0.726  VGA_SQ/Mmux_squareSpeedSign_squareSpeedSign_MUX_355_o114 (VGA_SQ/Mmux_squareSpeedSign_squareSpeedSign_MUX_355_o11)
+     LUT5:I4->O            1   0.254   0.000  VGA_SQ/Mmux_state[1]_state[1]_mux_461_OUT24 (VGA_SQ/state[1]_state[1]_mux_461_OUT<1>)
+     FDC:D                     0.074          VGA_SQ/state_1
+    ----------------------------------------
+    Total                     13.973ns (3.793ns logic, 10.179ns route)
+                                       (27.1% logic, 72.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'CLOCK_24'
+  Total number of paths / destination ports: 325 / 288
+-------------------------------------------------------------------------
+Offset:              6.610ns (Levels of Logic = 5)
+  Source:            sw<0> (PAD)
+  Destination:       VGA_SQ/state_1 (FF)
+  Destination Clock: CLOCK_24 rising
+
+  Data Path: sw<0> to VGA_SQ/state_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            36   1.328   2.042  sw_0_IBUF (sw_0_IBUF)
+     LUT6:I0->O            1   0.254   0.682  VGA_SQ/Mmux_state[1]_state[1]_mux_461_OUT22_SW4 (N183)
+     LUT6:I5->O            1   0.254   0.682  VGA_SQ/Mmux_state[1]_state[1]_mux_461_OUT22_SW1 (N207)
+     LUT6:I5->O            1   0.254   0.790  VGA_SQ/Mmux_state[1]_state[1]_mux_461_OUT22 (VGA_SQ/Mmux_state[1]_state[1]_mux_461_OUT21)
+     LUT5:I3->O            1   0.250   0.000  VGA_SQ/Mmux_state[1]_state[1]_mux_461_OUT24 (VGA_SQ/state[1]_state[1]_mux_461_OUT<1>)
+     FDC:D                     0.074          VGA_SQ/state_1
+    ----------------------------------------
+    Total                      6.610ns (2.414ns logic, 4.196ns route)
+                                       (36.5% logic, 63.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'CLOCK_24'
+  Total number of paths / destination ports: 55623 / 19
+-------------------------------------------------------------------------
+Offset:              17.707ns (Levels of Logic = 12)
+  Source:            VGA_Control/CurrentVPos_2 (FF)
+  Destination:       VGA_B<1> (PAD)
+  Source Clock:      CLOCK_24 rising
+
+  Data Path: VGA_Control/CurrentVPos_2 to VGA_B<1>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             8   0.525   1.052  VGA_Control/CurrentVPos_2 (VGA_Control/CurrentVPos_2)
+     LUT2:I0->O            3   0.250   0.766  VGA_Control/Blank_INV_22_o111 (VGA_Control/Blank_INV_22_o11)
+     LUT6:I5->O           20   0.254   1.286  VGA_Control/Blank_INV_22_o1 (VGA_Control/Blank_INV_22_o1)
+     LUT5:I4->O           25   0.254   1.858  VGA_Control/Blank_INV_22_o3 (VGA_Control/Blank_INV_22_o)
+     LUT6:I0->O           19   0.254   1.537  VGA_Control/Mmux_ScanlineX101 (ScanlineX<8>)
+     LUT4:I0->O            1   0.254   0.000  VGA_SQ/Mcompar_ScanlineX[10]_doorXArr[43]_LessThan_502_o_lut<4> (VGA_SQ/Mcompar_ScanlineX[10]_doorXArr[43]_LessThan_502_o_lut<4>)
+     MUXCY:S->O            1   0.427   0.682  VGA_SQ/Mcompar_ScanlineX[10]_doorXArr[43]_LessThan_502_o_cy<4> (VGA_SQ/Mcompar_ScanlineX[10]_doorXArr[43]_LessThan_502_o_cy<4>)
+     LUT5:I4->O            1   0.254   0.910  VGA_SQ/Mcompar_ScanlineX[10]_doorXArr[43]_LessThan_502_o_cy<5> (VGA_SQ/ScanlineX[10]_doorXArr[43]_LessThan_502_o)
+     LUT6:I3->O            1   0.235   0.682  VGA_SQ/Mmux_flag_008515 (VGA_SQ/Mmux_flag_008514)
+     LUT5:I4->O            3   0.254   0.874  VGA_SQ/Mmux_flag_008516 (VGA_SQ/Mmux_flag_008515)
+     LUT4:I2->O            1   0.250   0.958  VGA_SQ/Mmux_flag_008519 (VGA_SQ/flag_0085)
+     LUT6:I2->O            2   0.254   0.725  VGA_Control/Mmux_BLUE11 (VGA_B_0_OBUF)
+     OBUF:I->O                 2.912          VGA_B_0_OBUF (VGA_B<0>)
+    ----------------------------------------
+    Total                     17.707ns (6.377ns logic, 11.330ns route)
+                                       (36.0% logic, 64.0% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock CLOCK_24
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLOCK_24       |   13.973|         |         |         |
+RESET_N        |    2.889|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 53.00 secs
+Total CPU time to Xst completion: 52.36 secs
+ 
+--> 
+
+Total memory usage is 4574264 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  117 (   0 filtered)
+Number of infos    :    4 (   0 filtered)
+
